@@ -195,4 +195,15 @@ public class TrabajandoConFechas {
 		return posterior;
 	}
 
+	public static String obtenerFechaEnDiezDias() {
+
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("EEEE',' dd 'de' MMMM 'de' yyyy");
+		LocalDate fecha = LocalDate.now();
+		LocalDate fechaMasDiez = fecha.plusDays(10);
+
+		String fechaFormato = fechaMasDiez.format(formato);
+
+		return fechaFormato;
+	}
+
 }
